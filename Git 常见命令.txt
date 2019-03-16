@@ -1,0 +1,9 @@
+Git 常见命令
+1.创建版本库：
+   创建目录：mkdir 
+   git init : 把目录变成可被Git管理的目录
+
+2.添加文件到文本库
+   git add 文件名1
+   git add 文件名2
+   git commit -m "说明信息"
