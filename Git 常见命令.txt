@@ -7,3 +7,37 @@ Git 常见命令
    git add 文件名1
    git add 文件名2
    git commit -m "说明信息"
+   
+3.查看当前工作区状态：
+   git status
+
+4.查看修改过的内容
+   git diff 文件名
+
+5.版本回退
+   git log :查看最近到最远提交的日志  --pretty=oneline #会比较简单
+   HEAD     #指向当前版本
+   HEAD^    #指向前一版本
+   HEAD~100 #指向前面的第100个版本
+   git reset --hard HEAD^ #会退到上一个版本
+   git reset --hard 版本号（不用写全，自动查询)
+   git reflog #记录执行过的命令（含有版本号）
+   
+ 6.工作区、暂存区、版本库
+    git add     #工作区——>暂存区
+    git commit  #暂存区——>版本库
+   
+ 7.Git 跟踪的是修改，不是文件
+ 
+ 8.撤销修改
+    直接丢弃工作区的修改时，用命令git checkout -- 文件名
+    撤销暂存区的修改 ：先 git reset HEAD 文件名 再按工作区撤销修改
+    版本库撤销使用版本回退
+    git rm 文件名 ——》 git commit -m ""  #告知版本库删除
+    
+  
+  9.远程仓库（Github）
+    git remote add origin git@github.com:path/repo-name.git  #与远程仓库关联
+    git push -u origin master                                #第一次将全部内容推送上去
+    git push origin master                                   #此后的推送
+    git clone git@github.com:path/repo-name.git              #克隆远程版本库
